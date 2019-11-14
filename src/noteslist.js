@@ -6,11 +6,11 @@ class NotesList extends Component{
         const notes = this
             .props
             .notes
-            .map((note, i) => <Note { ...note } key={i}/>);
-            console.log(notes);
+            .map((note, i) => <Note notes={note} key={i}/>);
         return(
             <div className='noteslist'>
                 {notes}
+                <button>Add Note</button>
             </div>
         )
     }

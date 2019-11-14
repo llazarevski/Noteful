@@ -1,0 +1,8 @@
+li {
+    list-style: none;
+}
+
+.single-folder{
+    border: 1px solid black;
+    margin: 5px;
+}
