@@ -14,14 +14,9 @@ class App extends Component{
 };
 
 
-// filterFolders = () => {
-//   this.setState({
-//     foldersid: this.state.foldersid 
-//   })
-//   when display folders filter notes that have notes.folderid === folderid
-// };
-
-
+handleFolders = () => {
+  console.log('folder clicked!')
+}
    
   render(){
     return (
@@ -30,7 +25,7 @@ class App extends Component{
           <Main />
           </header>
         <nav className='folders'>
-          <FoldersList folders ={this.state.folders}/>
+          <FoldersList folders ={this.state.folders} onFolderClick={this.handleFolders}/>
         </nav>
         <main className='notes'> 
           <NotesList notes={this.state.notes} />
