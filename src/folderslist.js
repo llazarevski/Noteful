@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 import Folders from './folders'
 
 class FoldersList extends Component{
-    render(){
+    render(props){
         const folders = this
             .props
             .folders
-            .map((folder, i) => <Folders folders={folder} key={i} onFolderClick={props.onFolderClick}/>);
+            .map((folder, i) => <Folders folders={folder} key={i} onFolderClick={this.props.onFolderClick}/>);
         return(
             <div className='folders-container'>
                 <ul className='folders-list'>

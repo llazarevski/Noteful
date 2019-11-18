@@ -13,9 +13,17 @@ class App extends Component{
     foldersid: Store.folders.id
 };
 
-
 handleFolders = () => {
   console.log('folder clicked!')
+  this.setState({
+    foldersid: ''
+  })
+ 
+  renderNotes(foldersId) {
+    const notesPage = this.props.notes.filter(
+      
+    )
+  }
 }
    
   render(){
