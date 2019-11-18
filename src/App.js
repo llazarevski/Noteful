@@ -13,17 +13,17 @@ class App extends Component{
     foldersid: Store.folders.id
 };
 
-handleFolders = () => {
+handleFolders = (e) => {
+  console.log(e.target)
   console.log('folder clicked!')
-  this.setState({
+  const selectedFolder = this.setState({
     foldersid: ''
   })
- 
-  renderNotes(foldersId) {
-    const notesPage = this.props.notes.filter(
+ console.log(selectedFolder)
+  // renderNotes(foldersId) {
+  //   const notesPage = this.props.notes.filter(selectedFolder)
       
-    )
-  }
+  // }
 }
    
   render(){
@@ -33,7 +33,7 @@ handleFolders = () => {
           <Main />
           </header>
         <nav className='folders'>
-          <FoldersList folders ={this.state.folders} onFolderClick={this.handleFolders}/>
+          <FoldersList folders ={this.state.folders} onFolderClick = {(e) => this.handleFolders(e)}/>
         </nav>
         <main className='notes'> 
           <NotesList notes={this.state.notes} />
