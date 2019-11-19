@@ -14,12 +14,12 @@ class App extends Component{
 };
 
 handleFolders = (e) => {
-  console.log(e.target)
+  console.log(e.target.id)
   console.log('folder clicked!')
-  const selectedFolder = this.setState({
+  var selectedFolder = this.setState({
     foldersid: ''
   })
-  console.log(selectedFolder)
+  console.log({selectedFolder})
     const newNotes = this.props.notes.filter(selectedFolder)
     this.setState({
       notes: newNotes
