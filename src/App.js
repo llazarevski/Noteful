@@ -19,14 +19,11 @@ handleFolders = (e) => {
   const selectedFolder = this.setState({
     foldersid: ''
   })
-
-  changeNotes(selectedFolder) {
-    const notesPage = this.props.notes.filter(selectedFolder)
-    console.log(notesPage)
-      return(
-        {notesPage}
-      )
-    }
+  console.log(selectedFolder)
+    const newNotes = this.props.notes.filter(selectedFolder)
+    this.setState({
+      notes: newNotes
+    })
 }
    
   render(){
