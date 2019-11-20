@@ -13,14 +13,17 @@ class App extends Component{
     foldersid: Store.folders.id
 };
 
+handleSetActiveSecion = (sectionIndex) => {
+  this.setState({ activeSectionIndex: sectionIndex })
+}
 handleFolders = (e) => {
   console.log(e.target.id)
   console.log('folder clicked!')
-  var selectedFolder = this.setState({
-    foldersid: ''
-  })
+  const selectedFolder = 
+     this.setState({ foldersid: e.target.id  })
+  
   console.log({selectedFolder})
-    const newNotes = this.props.notes.filter(selectedFolder)
+    const newNotes = this.props.notes.filter(note => note.folderId === e.target.id)
     this.setState({
       notes: newNotes
     })
