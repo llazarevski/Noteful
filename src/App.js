@@ -36,8 +36,10 @@ class App extends Component{
         <header className='header'>
           <Route exact path='/' component={Main}/>
           </header>
+          <nav className='folders'> 
           <Route path='/folder' render={(props) => <FoldersList folders={this.state.folders} onFolderClick={(e)=> this.handleFolders(e)}/> } 
           />
+          </nav>
         <main className='notes'> 
           <Route path='/note' render={(props)=> <NotesList notes={this.state.notes} />}
           />
