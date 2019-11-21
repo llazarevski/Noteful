@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Route } from 'react-router-dom';
 import './App.css';
 import NotesList from './noteslist'
 import Main from "./main"
@@ -13,33 +14,33 @@ class App extends Component{
     foldersid: Store.folders.id
 };
 
-handleSetActiveSecion = (sectionIndex) => {
-  this.setState({ activeSectionIndex: sectionIndex })
-}
-handleFolders = (e) => {
-  console.log(e.target.id)
-  console.log('folder clicked!')
-  const selectedFolder = 
-     this.setState({ foldersid: e.target.id  })
+// handleSetActiveSecion = (sectionIndex) => {
+//   this.setState({ activeSectionIndex: sectionIndex })
+// }
+// handleFolders = (e) => {
+//   console.log(e.target)
+//   console.log('folder clicked!')
+//   let selectedFolder =  "";
+//   this.setState({ foldersid: e.target.id  }, () => { selectedFolder = this.state.foldersid})
   
-  console.log({selectedFolder})
-    const newNotes = this.props.notes.filter(note => note.folderId === e.target.id)
-    this.setState({
-      notes: newNotes
-    })
-}
+//   console.log({selectedFolder})
+//     const newNotes = this.props.notes.filter(note => note.folderId === e.target.id)
+//     this.setState({
+//       notes: newNotes
+//     })
+// }
    
   render(){
     return (
       <div className="App">
         <header className='header'>
-          <Main />
+          <Route exact path='/' component={Main}/>
           </header>
-        <nav className='folders'>
-          <FoldersList folders ={this.state.folders} onFolderClick = {(e) => this.handleFolders(e)}/>
-        </nav>
+          <Route path='/folder' render={(props) => <FoldersList folders={this.state.folders} onFolderClick={(e)=> this.handleFolders(e)}/> } 
+          />
         <main className='notes'> 
-          <NotesList notes={this.state.notes} />
+          <Route path='/note' render={(props)=> <NotesList notes={this.state.notes} />}
+          />
         </main>
       </div>
     );

@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
+
 import Folders from './folders'
+
 
 class FoldersList extends Component{
     render(props){
@@ -8,15 +10,16 @@ class FoldersList extends Component{
             .folders
             .map((folder, i) => <Folders folders={folder} key={i} onFolderClick={this.props.onFolderClick}/>);
         return(
-            <div className='folders-container'>
+            <nav className='folders-container'>
                 <ul className='folders-list'>
                     {folders}
                 </ul>
                 <button>Add Folder</button>
-            </div>
+            </nav>
         )
     }
 
 }
+
 
 export default FoldersList
