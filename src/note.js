@@ -2,7 +2,6 @@ import React from "react";
 import "./note.css"
 
 export default function Note(props){
-    console.log(props)
         return(
             <div className= 'note-container'>
                 {/* <a href={} target="_blank"> */}

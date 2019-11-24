@@ -8,7 +8,7 @@ class FoldersList extends Component{
         const folders = this
             .props
             .folders
-            .map((folder, i) => <Folders folders={folder} key={i} onFolderClick={this.props.onFolderClick}/>);
+            .map((folder, i) => <Folders folders={folder} key={i} />);
         return(
             <nav className='folders-container'>
                 <ul className='folders-list'>

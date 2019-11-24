@@ -5,6 +5,7 @@ import NotesList from './noteslist'
 import Main from "./main"
 import FoldersList from './folderslist'
 import Store from "./store"
+import NotePage from './notepage'
 
 console.log(Store)
 class App extends Component{
@@ -13,37 +14,19 @@ class App extends Component{
     folders: Store.folders,
     foldersid: Store.folders.id
 };
-
-// handleSetActiveSecion = (sectionIndex) => {
-//   this.setState({ activeSectionIndex: sectionIndex })
-// }
-// handleFolders = (e) => {
-//   console.log(e.target)
-//   console.log('folder clicked!')
-//   let selectedFolder =  "";
-//   this.setState({ foldersid: e.target.id  }, () => { selectedFolder = this.state.foldersid})
-  
-//   console.log({selectedFolder})
-//     const newNotes = this.props.notes.filter(note => note.folderId === e.target.id)
-//     this.setState({
-//       notes: newNotes
-//     })
-// }
    
   render(){
     return (
-      <div className="App">
-        <header className='header'>
-          <Route exact path='/' component={Main}/>
-          </header>
-          <nav className='folders'> 
-          <Route path='/folder' render={(props) => <FoldersList folders={this.state.folders} onFolderClick={(e)=> this.handleFolders(e)}/> } 
-          />
-          </nav>
-        <main className='notes'> 
-          <Route path='/note' render={(props)=> <NotesList notes={this.state.notes} />}
-          />
-        </main>
+      <div className="App">    
+          <Route exact path="/" render= {(props) => <Main folders={this.state.folders} notes={this.state.notes} />}/>
+          <Route path='/folder/:folderId' render={(props) => { 
+            var notes= 
+              this.state.notes.filter(note => note.folderId == props.match.params.folderId)
+              console.log(notes, this.state.notes)
+            return (<Main folders={this.state.folders} notes={notes}/>)
+            } } 
+            />
+          <Route path='/note/:noteId' component={<NotePage folders={this.state.folders} notes={this.state.notes}/>}/>
       </div>
     );
   }
