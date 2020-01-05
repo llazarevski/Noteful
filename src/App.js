@@ -6,6 +6,13 @@ import Main from "./main"
 import FoldersList from './folderslist'
 import Store from "./store"
 import NotePage from './notepage'
+import WebFont from 'webfontloader';
+
+WebFont.load({
+  google: {
+    families: ['Source Sans Pro:400,400i,700', 'sans-serif']
+  }
+});
 
 console.log(Store)
 class App extends Component{
@@ -26,7 +33,10 @@ class App extends Component{
             return (<Main folders={this.state.folders} notes={notes}/>)
             } } 
             />
-          <Route path='/note/:noteId' component={<NotePage folders={this.state.folders} notes={this.state.notes}/>}/>
+          <Route path='/note/:noteId' render={(props)=> <NotePage folders={this.state.folders} notes={this.state.notes}
+          onClickGoBack={() => this.props.history.push('/')}
+            />
+          }/>
       </div>
     );
   }

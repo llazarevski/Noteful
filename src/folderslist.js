@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import Folders from './folders'
+import './folderslist.css'
 
 
 class FoldersList extends Component{
@@ -10,12 +11,12 @@ class FoldersList extends Component{
             .folders
             .map((folder, i) => <Folders folders={folder} key={i} />);
         return(
-            <nav className='folders-container'>
+            <div className='folders-container'>
                 <ul className='folders-list'>
                     {folders}
                 </ul>
-                <button>Add Folder</button>
-            </nav>
+                <button className="buttons">Add Folder</button>
+            </div>
         )
     }
 

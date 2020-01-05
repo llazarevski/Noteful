@@ -9,7 +9,7 @@ export default function NotePage(props){
                 <Link to={'/'}>
                     Go Back
                 </Link>
-                <h2>{props.folders.name}</h2>
+                <h2 id={props.folders.name}>{props.folders.name}</h2>
                 </aside>
                 <div className= 'note-container'>
                     <h2>{props.notes.name}</h2>

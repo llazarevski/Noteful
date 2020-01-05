@@ -1,0 +1,15 @@
+
+h1 {
+    color: #005c99;
+    font-family: 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+    text-align: center;
+}
+
+nav {
+    max-width: 500px;
+}
+
+main {
+    width: 3fr;
+}

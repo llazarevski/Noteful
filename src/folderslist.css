@@ -1,4 +1,11 @@
-.folders-list {
+/* .folders-list {
     margin: 0px;
+    text-decoration: none;
+} */
+
+.buttons {
+    background-color: #ffffff;
+    border: 1px solid gray;
+    text-align: right;
 }
 

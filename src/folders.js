@@ -7,7 +7,7 @@ export default function Folders(props){
             
             <li className="single-folder">
                 <Link to = {"/folder/"+ props.folders.id}>
-                <h2 id={props.folders.id}>{props.folders.name}</h2>
+                <h2 className="folderName" id={props.folders.id}>{props.folders.name}</h2>
                 </Link>
             </li>
                 

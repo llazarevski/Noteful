@@ -1,8 +1,20 @@
+*{
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
 li {
     list-style: none;
+    text-decoration: none;
 }
 
 .single-folder{
-    border: 1px solid black;
     margin: 5px;
+    width: 300px;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: right;
+
+}
+.folderName {
+    text-decoration: none;
 }
