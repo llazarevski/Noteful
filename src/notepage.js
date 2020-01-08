@@ -3,13 +3,19 @@ import { Link } from 'react-router-dom';
 import "./notepage.css"
 
 export default function NotePage(props){
+    console.log('props.notes is ', props.notes )
         return(
             <div>
+                <header className="header">
+                    <Link to='/'>
+                        <h1>Noteful</h1>
+                    </Link>
+                </header>
                 <aside>
                 <Link to={'/'}>
                     Go Back
                 </Link>
-                <h2 id={props.folders.name}>{props.folders.name}</h2>
+                <h2>{props.folders.name}</h2>
                 </aside>
                 <div className= 'note-container'>
                     <h2>{props.notes.name}</h2>
