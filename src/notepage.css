@@ -1,0 +1,15 @@
+aside {
+    display: inline-block;
+    width: 200px;
+}
+
+.content-container{
+    display: inline-block;
+    width: 700px;
+    padding: 10px;
+}
+
+.note-container{
+    width: 700px;
+    padding: 10px;
+}

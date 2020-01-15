@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Note from './note'
 
+
 class NotesList extends Component{
     render(){
         const notes = this
@@ -10,7 +11,9 @@ class NotesList extends Component{
         return(
             <div className='noteslist'>
                 {notes}
-                <button>Add Note</button>
+                <button>
+                    Add Note
+                </button>
             </div>
         )
     }

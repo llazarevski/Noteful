@@ -4,6 +4,7 @@ import "./notepage.css"
 
 export default function NotePage(props){
     console.log('props.notes is ', props.notes )
+    console.log('props.folders is', props.folders)
         return(
             <div>
                 <header className="header">
@@ -15,14 +16,16 @@ export default function NotePage(props){
                 <Link to={'/'}>
                     Go Back
                 </Link>
-                <h2>{props.folders.name}</h2>
+                <h2>{props.folders[0].name}</h2>
                 </aside>
-                <div className= 'note-container'>
-                    <h2>{props.notes.name}</h2>
-                    <p>Date Modified on {props.notes.modified}</p>
-                    <button>Delete Note</button>
+                <div className='content-container'>
+                    <div className= 'note-container'>
+                        <h2>{props.notes[0].name}</h2>
+                        <p>Date Modified on {props.notes[0].modified}</p>
+                        <button>Delete Note</button> 
+                    </div> 
+                    <p>{props.notes[0].content}</p>
                 </div>
-                <p>{props.notes.content}</p> 
             </div>
         )
 

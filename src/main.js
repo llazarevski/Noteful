@@ -12,7 +12,7 @@ return(
             <h1>Noteful</h1>
         </Link>
         </header>
-        <nav>
+        <nav className='test'>
         <FoldersList className='sidebar' folders={props.folders} /> 
         </nav>
         <main>

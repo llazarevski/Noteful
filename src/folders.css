@@ -5,16 +5,22 @@
 li {
     list-style: none;
     text-decoration: none;
+    color: #1f2e2e;
+}
+
+li :hover {
+    color: #3c73aa;
 }
 
 .single-folder{
     margin: 5px;
-    width: 300px;
+    min-width: 200px;
     font-size: 16px;
     text-decoration: none;
     text-align: right;
+    
 
 }
-.folderName {
+.folderName { 
     text-decoration: none;
 }

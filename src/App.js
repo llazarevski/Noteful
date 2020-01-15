@@ -5,6 +5,7 @@ import Main from "./main"
 import Store from "./store"
 import NotePage from './notepage'
 import WebFont from 'webfontloader';
+import NotefulContext from './NotefulContext';
 
 WebFont.load({
   google: {
@@ -15,15 +16,21 @@ WebFont.load({
 console.log(Store)
 class App extends Component{
   state = {
-    notes: Store.notes,
-    folders: Store.folders,
+    notes: [],
+    folders: [],
     foldersid: Store.folders.id
 };
    
   render(){
+    const contextValue = {
+            notes: this.state.notes,
+            folders: this.state.folders,
+            deleteNote: this.deleteNote
+          }
     return (
+      <NotefulContext.Provider value={contextValue}>
       <div className="App">    
-          <Route exact path="/" render= {(props) => <Main folders={this.state.folders} notes={this.state.notes} />}/>
+          <Route exact path="/" component={Main} />}/>
           <Route path='/folder/:folderId' render={(props) => { 
             var notes= 
               this.state.notes.filter(note => note.folderId === props.match.params.folderId)
@@ -40,6 +47,7 @@ class App extends Component{
               }
           }/>
       </div>
+      </NotefulContext.Provider>
     );
   }
 }

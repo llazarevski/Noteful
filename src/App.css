@@ -5,5 +5,10 @@
   font-family: 'Helvetica Neue', sans-serif;
 }
 
+.app {
+  display: inline-block;
+  width: 100%;
+}
+
 
 

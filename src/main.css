@@ -7,9 +7,13 @@ h1 {
 }
 
 nav {
-    max-width: 500px;
+    display: inline-block;
+    max-width: 400px;
 }
 
 main {
-    width: 3fr;
+    display: inline-flex;
+    margin: 10px;
+    width: 700px;
 }
+
